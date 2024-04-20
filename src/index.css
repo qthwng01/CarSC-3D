@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Jost', sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .item {
+    @apply flex-1 px-5 border-r border-solid border-neutral-200;
+  }
+  .item:nth-child(2) {
+    @apply border-0 md:border-0 lg:border-r lg:border-solid lg:border-neutral-200
+  }
+  .item:last-child {
+    @apply border-0;
+  }
+}
+
