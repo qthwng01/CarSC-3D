@@ -110,10 +110,10 @@ const Hero = () => {
               id="h_text"
               className="mb-6 relative w-full text-center md:text-end"
             >
-              <h2 className="text-5xl md:text-7xl 2xl:text-8xl font-bold mb-6">
+              <h2 className="text-5xl text-end md:text-7xl 2xl:text-8xl font-bold mb-6">
                 Luxury Car In
               </h2>
-              <h2 className="text-6xl md:text-8xl 2xl:text-9xl font-bold mb-6 lg:mb-6">
+              <h2 className="text-6xl text-end md:text-8xl 2xl:text-9xl font-bold mb-6 lg:mb-6">
                 Worldwide
               </h2>
               <div className="text-right lg:pr-6">

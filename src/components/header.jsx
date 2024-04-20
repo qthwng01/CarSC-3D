@@ -44,7 +44,7 @@ const Header = () => {
       <div
         className={`${
           toggle
-            ? 'visible fixed top-0 right-0 left-0 bottom-0 bg-white/95 z-10 w-full h-full transition-all duration-200 ease-linear -translate-x-0 opacity-100'
+            ? 'visible fixed top-0 right-0 left-0 bottom-0 bg-white z-10 w-full h-full transition-all duration-200 ease-linear -translate-x-0 opacity-100'
             : 'invisible w-0 h-0 translate-x-full opacity-0'
         }`}
       >
@@ -52,7 +52,7 @@ const Header = () => {
           <span className="ml-5" onClick={() => setToggle(!toggle)}>
             <AiOutlineClose className="text-3xl cursor-auto" />
           </span>
-          <ul className="flex flex-col items-center justify-center flex-wrap">
+          <ul className="flex flex-col items-center justify-center flex-wrap pt-14">
             {navItems.map((item) => (
               <li className="py-4" key={item.id}>
                 <a className='text-4xl font-semibold' href={item.path}>{item.name}</a>
