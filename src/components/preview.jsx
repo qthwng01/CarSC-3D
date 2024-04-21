@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import videoSrc from '../assets/0419.mp4'
+import videoSrc from '/0419.mp4'
 import { ScrollTrigger } from 'gsap/all'
 import { infoCar } from '../constants'
 gsap.registerPlugin(ScrollTrigger)
@@ -56,11 +56,11 @@ const Preview = () => {
           <div className="mt-8 pr_info">
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {infoCar.map((item) => (
-                <li className="w-full pt-4 px-4" key={item.id}>
-                  <h3 className="text-white font-semibold text-4xl mb-4">
+                <li className="w-full pt-4 lg:px-4" key={item.id}>
+                  <h3 className="text-white font-semibold text-2xl md:text-4xl mb-4">
                     {item.heading}
                   </h3>
-                  <p className="text-white line-clamp-3">{item.desc}</p>
+                  <p className="text-slate-300">{item.desc}</p>
                 </li>
               ))}
             </ul>

@@ -21,10 +21,9 @@ body {
     @apply flex-1 px-5 border-r border-solid border-neutral-200;
   }
   .item:nth-child(2) {
-    @apply border-0 md:border-0 lg:border-r lg:border-solid lg:border-neutral-200
+    @apply border-0 md:border-0 lg:border-r lg:border-solid lg:border-neutral-200;
   }
   .item:last-child {
     @apply border-0;
   }
 }
-

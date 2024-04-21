@@ -1,6 +1,6 @@
-import hero from '../assets/hero2.png'
+import imgHero from '/bg-hero.jpg'
 import { MdArrowOutward } from 'react-icons/md'
-import { IoMdArrowDroprightCircle } from 'react-icons/io'
+import { IoMdArrowDroprightCircle, IoMdArrowUp } from 'react-icons/io'
 import {
   FaRegDotCircle,
   FaArrowRight,
@@ -14,9 +14,12 @@ import { TbEyePin } from 'react-icons/tb'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/all'
+import { useState } from 'react'
 gsap.registerPlugin(ScrollTrigger)
 
 const Hero = () => {
+  const [togglePrice, setTogglePrice] = useState(false)
+
   useGSAP(() => {
     gsap.to('#h_text', {
       opacity: 1,
@@ -42,10 +45,10 @@ const Hero = () => {
 
   return (
     <div id="home" className="pt-[10rem] -mt-[3.25rem] md:-mt-[1.25rem]">
-      <div className="container w-full max-w-full mx-auto px-4 xl:px-14 pb-10">
+      <div className="container w-full max-w-full mx-auto h-auto px-4 xl:px-14 pb-8">
         <div className="flex flex-col flex-wrap lg:flex-row lg:flex-nowrap">
           {/* left */}
-          <div id="hl_div" className="w-full 2xl:h-full 2xl:w-1/2 relative">
+          <div id="hl_div" className="w-full 2xl:h-full 2xl:w-1/2 relative mb-6">
             <div className="flex items-center md:justify-center lg:justify-start mb-6 overflow-x-auto md:overscroll-none">
               <a className="p-4 mr-12 text-xl cursor-pointer transition-al h-[52px] border-b-4 active:border-b-4 border-black">
                 <FaCarAlt />
@@ -66,14 +69,52 @@ const Hero = () => {
             <h2 className="text-4xl md:text-center lg:text-start md:text-5xl font-bold text-primary-color mb-2">
               MERCEDES-BENZ
             </h2>
-            <h2 className="text-4xl md:text-center lg:text-start md:text-5xl font-bold text-primary-color mb-2">
+            <h2 className="text-4xl md:text-center lg:text-start md:text-5xl font-bold text-primary-color mb-6">
               SL63 AMG
             </h2>
-            <div className="lg:absolute origin-center top-5% left-[-7%] translate-y-0 mb-6">
-              <img src={hero} className="w-full h-auto" alt="hero" />
+            <div className="bg-no-repeat bg-cover">
+              <img
+                src={imgHero}
+                className="w-full xl:w-10/12 h-auto rounded-3xl"
+                alt="hero"
+              />
             </div>
-            <div className="hidden z-10 xl:block xl:absolute top-[32%] right-[2%] md:top-[25%] lg:top-[20%] lg:right-[20%] lg:translate-x-[20%] lg:translate-y-[20%] 2xl:top-[45%] 2xl:right-[15%] border-2 rounded-2xl shadow-xl md:bg-white/30 bg-white">
+            <div className="text-center flex flex-row items-center justify-center mt-6 xl:hidden">
+              <p className="text-2xl font-medium mr-2 cursor-pointer">
+                Price 2024
+              </p>
+              <span onClick={() => setTogglePrice(!togglePrice)} className="border-4 border-third-color rounded-3xl px-2 py-4">
+                <IoMdArrowUp className="text-black font-bold text-xl animate-bounce" />
+              </span>
+            </div>
+            <div className="hidden z-10 xl:block xl:absolute top-[32%] right-[2%] md:top-[25%] lg:top-[20%] lg:right-[20%] lg:translate-x-[20%] lg:translate-y-[20%] 2xl:top-[35%] 2xl:right-[5%] 2xl:translate-x-[20%] 2xl:translate-y-[20%] border-2 rounded-2xl shadow-xl md:bg-white/40 bg-white">
               <div className="md:backdrop-blur-sm md:backdrop-contrast-125 md:backdrop-grayscale-0 md:backdrop-opacity-10 md:backdrop-saturate-50 w-full md:w-52 h-auto p-2">
+                <div className="flex justify-end mb-4">
+                  <FaRegDotCircle className="text-third-color text-2xl" />
+                </div>
+                <div className="mb-8">
+                  <a className="border-2 border-black rounded-3xl px-8 py-1">
+                    + BENZ
+                  </a>
+                </div>
+                <span className="font-semibold text-md mb-4">Price 2024</span>
+                <h3 className="font-semibold text-3xl mb-6">$8750.00</h3>
+                <div className="flex justify-between">
+                  <a className="text-black p-4 bg-white rounded-full">
+                    <TbEyePin />
+                  </a>
+                  <a className="text-black p-4 bg-white rounded-full">
+                    <FaArrowRight />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className={togglePrice ? `z-10 visible block absolute transition-all ease-in xl:hidden
+             bottom-[14%] right-[25%]
+             md:bottom-[12%] md:right-[25%] md:translate-y-[0%]
+             lg:bottom-[15%] lg:right-[25%] lg:translate-x-[5%] lg:translate-y-[10%]
+             border-2 rounded-2xl shadow-xl bg-white/40 w-1/2` : `invisible h-0`}>
+              <div className="p-2">
                 <div className="flex justify-end mb-4">
                   <FaRegDotCircle className="text-third-color text-2xl" />
                 </div>
@@ -99,10 +140,10 @@ const Hero = () => {
           <div className="w-full 2xl:w-1/2">
             <div
               id="h_state"
-              className="flex items-center md:justify-end mb-6 lg:mb-6"
+              className="flex items-center justify-end mb-6 lg:mb-12"
             >
-              <span className="border-2 border-slate-400 w-8 mr-2"></span>
-              <p className="text-xl font-medium ">
+              <span className="hidden md:block border-2 border-slate-400 w-8 mr-2"></span>
+              <p className="text-xl font-medium text-right">
                 Statement That Few Vehicles can Match!
               </p>
             </div>
@@ -117,7 +158,7 @@ const Hero = () => {
                 Worldwide
               </h2>
               <div className="text-right lg:pr-6">
-                <div className="flex items-center justify-end mb-6">
+                <div className="flex items-center justify-end mb-8">
                   <span className="bg-gradient-to-b from-slate-400 to-third-color rounded-full w-6 h-6 mr-4"></span>
                   <p className="font-medium text-lg">
                     Just fast and sport style
