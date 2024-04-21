@@ -35,7 +35,7 @@ const Preview = () => {
 
   return (
     <div id="preview" className="bg-black lg:pt-[1.5rem] md:mt-[1.25rem]">
-      <div className="container w-full max-w-full h-auto mx-auto px-4 xl:px-14 pb-14">
+      <div className="container w-full h-auto mx-auto pb-14">
         <div className="xl:w-full pt-12">
           <h2
             id="previewText"
@@ -51,7 +51,7 @@ const Preview = () => {
             autoPlay
             ref={videoRef}
           >
-            <source src={videoSrc} type="video/mp4" />
+            <source src={videoSrc} type="video/mp4" className='w-full h-auto' />
           </video>
           <div className="mt-8 pr_info">
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

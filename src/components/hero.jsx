@@ -45,7 +45,7 @@ const Hero = () => {
 
   return (
     <div id="home" className="pt-[10rem] -mt-[3.25rem] md:-mt-[1.25rem]">
-      <div className="container w-full max-w-full mx-auto h-auto px-4 xl:px-14 pb-8">
+      <div className="container w-full mx-auto pb-8">
         <div className="flex flex-col flex-wrap lg:flex-row lg:flex-nowrap">
           {/* left */}
           <div id="hl_div" className="w-full 2xl:h-full 2xl:w-1/2 relative mb-6">
@@ -87,10 +87,12 @@ const Hero = () => {
                 <IoMdArrowUp className="text-black font-bold text-xl animate-bounce" />
               </span>
             </div>
-            <div className="hidden z-10 xl:block xl:absolute top-[32%] right-[2%] md:top-[25%] lg:top-[20%] lg:right-[20%] lg:translate-x-[20%] lg:translate-y-[20%] 2xl:top-[35%] 2xl:right-[5%] 2xl:translate-x-[20%] 2xl:translate-y-[20%] border-2 rounded-2xl shadow-xl md:bg-white/40 bg-white">
+            <div className="hidden z-10 xl:block xl:absolute 
+              xl:top-[35%] xl:right-[5%] xl:translate-x-[20%] xl:translate-y-[20%] 
+              border-2 rounded-2xl shadow-xl md:bg-white/40 bg-white">
               <div className="md:backdrop-blur-sm md:backdrop-contrast-125 md:backdrop-grayscale-0 md:backdrop-opacity-10 md:backdrop-saturate-50 w-full md:w-52 h-auto p-2">
                 <div className="flex justify-end mb-4">
-                  <FaRegDotCircle className="text-third-color text-2xl" />
+                  <FaRegDotCircle className="text-third-color text-2xl animate-pulse" />
                 </div>
                 <div className="mb-8">
                   <a className="border-2 border-black rounded-3xl px-8 py-1">
@@ -113,10 +115,10 @@ const Hero = () => {
              bottom-[14%] right-[25%]
              md:bottom-[12%] md:right-[25%] md:translate-y-[0%]
              lg:bottom-[15%] lg:right-[25%] lg:translate-x-[5%] lg:translate-y-[10%]
-             border-2 rounded-2xl shadow-xl bg-white/40 w-1/2` : `invisible h-0`}>
+             border-2 rounded-2xl shadow-xl bg-white w-1/2` : `invisible h-0`}>
               <div className="p-2">
                 <div className="flex justify-end mb-4">
-                  <FaRegDotCircle className="text-third-color text-2xl" />
+                  <FaRegDotCircle className="text-third-color text-2xl animate-pulse" />
                 </div>
                 <div className="mb-8">
                   <a className="border-2 border-black rounded-3xl px-8 py-1">
@@ -137,7 +139,7 @@ const Hero = () => {
             </div>
           </div>
           {/* right */}
-          <div className="w-full 2xl:w-1/2">
+          <div className="w-full 2xl:w-1/2 2xl:h-full">
             <div
               id="h_state"
               className="flex items-center justify-end mb-6 lg:mb-12"

@@ -53,7 +53,7 @@ const Header = () => {
         className={`${
           toggle
             ? 'visible fixed top-0 right-0 left-0 bottom-0 bg-white z-10 w-full h-full transition-all duration-200 ease-linear translate-x-0 opacity-100'
-            : 'invisible w-0 h-0 translate-x-[500px] opacity-0'
+            : 'invisible w-full h-0 translate-x-[500px] opacity-0'
         }`}
       >
         <div className="h-full bg-[url(/bg-menu.jpg)] bg-no-repeat bg-cover">

@@ -27,7 +27,7 @@ const Model = () => {
       scrollTrigger: {
         trigger: '.item',
         toggleActions: 'restart reverse restart reverse',
-        start: '40% bottom',
+        start: '10% bottom',
       },
       opacity: 1,
       x: -25,
@@ -38,7 +38,7 @@ const Model = () => {
 
   return (
     <div id="model" className="lg:pt-[1.5rem] md:mt-[1.25rem]">
-      <div className="container w-full max-w-full h-auto mx-auto pt-5 px-4 xl:px-14 pb-10">
+      <div className="container w-full h-auto mx-auto pt-5 pb-10">
         <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-semibold mb-4">
           Best Performance of Car
         </h2>
@@ -53,10 +53,10 @@ const Model = () => {
             alt="preview"
           />
         </div>
-        <div className="w-full h-auto text-center">
+        <div className="w-full h-auto text-center bg-white dark:bg-white">
           <Drawer dismissible={false}>
             <DrawerTrigger asChild>
-              <div className="text-center flex flex-row items-center justify-center mt-6 xl:hidden">
+              <div className="text-center flex flex-row items-center justify-center mt-6">
                 <p className="text-2xl font-medium mr-2 cursor-pointer">
                   Open 3D Model
                 </p>
@@ -68,9 +68,11 @@ const Model = () => {
             <DrawerContent>
               <div className="mx-auto w-full">
                 <DrawerHeader>
-                  <DrawerTitle>3D Model Mercedes - Benz SL63 AMG</DrawerTitle>
-                  <DrawerDescription>
-                    Set color customs  - Developing.
+                  <DrawerTitle className="text-center">
+                    3D Model Mercedes - Benz SL63 AMG
+                  </DrawerTitle>
+                  <DrawerDescription className="text-center">
+                    Set color customs - Developing.
                   </DrawerDescription>
                 </DrawerHeader>
                 <div className="p-4 pb-0">
@@ -81,12 +83,7 @@ const Model = () => {
                           <Mercedes />
                         </Suspense>
                       </Stage>
-                      <OrbitControls
-                        enableZoom={true}
-                        //   minZoom={2}
-                        //   maxZoom={10}
-                        //target={new THREE.Vector3(0, 0, 0)}
-                      />
+                      <OrbitControls enableZoom={true} />
                     </Canvas>
                   </div>
                 </div>
@@ -98,17 +95,6 @@ const Model = () => {
               </div>
             </DrawerContent>
           </Drawer>
-          {/* <Canvas>
-            <Stage environment="city" intensity={0.3}>
-              <Mercedes />
-            </Stage>
-            <OrbitControls
-              enableZoom={false}
-              //   minZoom={2}
-              //   maxZoom={10}
-              //target={new THREE.Vector3(0, 0, 0)}
-            />
-          </Canvas> */}
         </div>
         <div className="mt-8 m_performance">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 bg-[#FAFAFA] py-8 rounded-xl">
